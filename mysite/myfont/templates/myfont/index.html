@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>见字如面</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'myfont/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'myfont/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'myfont/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'myfont/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'myfont/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'myfont/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'myfont/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'myfont/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'myfont/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'myfont/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Bethany - v2.2.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center">
+        <div class="logo mr-auto">
+          <h1 class="text-light"><a href="{% url 'myfont:index' %}"><span><strong>见字如面</strong></span></a></h1>
+        </div>
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li><a href="{% url 'myfont:index' %}"><strong>首页</strong></a></li>
+            <li><a href="{% url 'myfont:myfont' %}"><strong>我的字体</strong></a></li>
+            <li><a href="{% url 'myfont:createfont' %}"><strong>新建字体</strong></a></li>
+            <li><a href="{% url 'myfont:activity' %}"><strong>实用界面</strong></a></li>
+            <li class="drop-down">
+              <a href="{% url 'myfont:userinfo' %}"><strong>用户名：{{ request.myfont_user.user_name }}</strong></a><ul>
+                <li><a href="{% url 'myfont:logout' %}">退出登录</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav><!-- .nav-menu -->
+      </div><!-- End Header Container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+      <div class="contact">
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+              <!-- 1 -->
+              <div class="col-lg-6 mt-4">
+                <a href="{% url 'myfont:createfont' %}">  <!-- 加链接 -->
+                <div class="info">
+                  <i class="icofont-envelope"></i>
+                  <h4>设计我的字体</h4>
+                </div>
+                </a>
+              </div>
+              <!-- 2 -->
+              <div class="col-lg-6">
+                <a href="{% url 'myfont:myfont' %}">  <!-- 加链接 -->
+                <div class="info w-100 mt-4">
+                  <i class="icofont-phone"></i>
+                  <h4>查看我的字体</h4>
+                </div>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+  <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="section-title" data-aos="fade-left">
+          <h2>用户字体展示</h2>
+        </div>
+
+
+
+        <!-- 字体展示 -->
+          <div class="col-lg-16 col-md-16 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static 'myfont/assets/img/portfolio/portfolio.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+              </div>
+            </div>
+          </div>
+
+<!-- 字体展示 -->
+          <div class="col-lg-16 col-md-16 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static 'myfont/assets/img/portfolio/portfolio.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+              </div>
+            </div>
+          </div>
+<!-- 字体展示 -->
+          <div class="col-lg-16 col-md-16 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static 'myfont/assets/img/portfolio/portfolio.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+              </div>
+            </div>
+          </div>
+<!-- 字体展示 -->
+          <div class="col-lg-16 col-md-16 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static 'myfont/assets/img/portfolio/portfolio.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+              </div>
+            </div>
+          </div>
+
+
+
+
+      </div>
+    </section>
+  <!-- End Portfolio Section -->
+<!-- end -->
+  <!-- Vendor JS Files -->
+  <script src="{% static 'myfont/assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'myfont/assets/vendor/aos/aos.js' %}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'myfont/assets/js/main.js' %}"></script>
+</body>
+</html>

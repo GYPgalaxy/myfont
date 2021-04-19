@@ -1,0 +1,244 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title>见字如面</title>
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<!-- Favicons -->
+		<link href="{% static 'myfont/assets/img/favicon.png' %}" rel="icon">
+		<link href="{% static 'myfont/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+			rel="stylesheet">
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'myfont/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+		<!-- Template Main CSS File -->
+		<link href="{% static 'myfont/assets/css/style.css' %}" rel="stylesheet">
+		<!-- =======================================================
+  * Template Name: Bethany - v2.2.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+	</head>
+
+	<body>
+
+
+		<!-- ======= Header ======= -->
+		<header id="header" class="fixed-top d-flex align-items-center">
+			<div class="container">
+				<div class="header-container d-flex align-items-center">
+					<div class="logo mr-auto">
+						<h1 class="text-light"><a href="{% url 'myfont:index' %}"><span><strong>见字如面</strong></span></a>
+						</h1>
+					</div>
+
+					<nav class="nav-menu d-none d-lg-block">
+						<ul>
+							<li><a href="{% url 'myfont:index' %}"><strong>首页</strong></a></li>
+							<li><a href="{% url 'myfont:myfont' %}"><strong>我的字体</strong></a></li>
+							<li><a href="{% url 'myfont:createfont' %}"><strong>新建字体</strong></a></li>
+							<li><a href="{% url 'myfont:activity' %}"><strong>实用界面</strong></a></li>
+							<li class="drop-down">
+								<a
+									href="{% url 'myfont:userinfo' %}"><strong>用户名：{{ request.myfont_user.user_name }}</strong></a>
+								<ul>
+									<li><a href="{% url 'myfont:logout' %}">退出登录</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav><!-- .nav-menu -->
+				</div><!-- End Header Container -->
+			</div>
+		</header><!-- End Header -->
+		<!-- STEP 1 -->
+
+
+		<section id="portfolio" margin-top="200px">
+			<div class="container ">
+				<div class="row">
+					<h2>
+						<h2>&nbsp</h2>
+					</h2>
+				</div>
+				<br>
+				<div>
+					<h3>第一步：选择字体包 </h3>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-4">
+								<a href="{% url 'myfont:download' '一级' %}">
+									<button type="button" class="btn btn-primary btn-lg btn-block">GB2312一级3755个字</button>
+								</a>
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-primary btn-lg btn-block">敬请期待更多字体包</button>
+							</div>
+							<!-- <div class="col-md-4">
+								<button type="button" class="btn btn-primary btn-lg btn-block">3号字体</button>
+							</div> -->
+						</div>
+						<br>
+						<div class="row">
+							<!-- <div class="col-md-4">
+								<button type="button" class="btn btn-primary btn-lg btn-block">4号字体</button>
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-primary btn-lg btn-block">5号字体</button>
+							</div>
+							<div class="col-md-4">
+								<button type="button" class="btn btn-primary btn-lg btn-block">6号字体</button>
+							</div> -->
+						</div>
+					</div>
+					<div class="col-md-6">
+						<p>点击左方按钮下载字体模板包，pdf格式，下载后自主打印填写，拍照上传。</p>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!-- 第二步 -->
+		<section id="portfolio" margin-top="200px">
+			<div class="container ">
+
+				<div>
+					<h3>第二步：填写模板表格</h3>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-6  col-md-6">
+
+						<img src="{% static 'myfont/assets/img/tamplate_first_page_unfilled.jpg' %}" border="10"
+							class="img-fluid" alt="">
+
+					</div>
+					<div class="col-lg-6 col-md-6">
+
+						<p>模板表格中按照字的对应顺序填写，左边为参考区，右边为填写区，填写完成后请拍照后上传。</p>
+						
+						<p><strong>填写注意事项：</strong></p>
+						<p>1.请用黑色签字笔书写，不可使用铅笔或其他颜色的笔。
+						<br>2.尽量保持手写字处于表格的中央，大小适中，笔记清晰，不要压框或越框。
+						<br>3.填错不可修改，可重新打印后填写。</P>
+						
+						<p><strong>拍照注意事项：</strong></p>
+						<p>1.只拍填写区域，且画面包含完整边框且不越过白纸（如左图绿色框线为佳）。</p>
+					</div>
+
+
+
+				</div>
+
+			</div>
+			</div>
+		</section>
+		<!-- STEP 2 -->
+
+		<!-- STEP 3 -->
+		<section id="portfolio" margin-top="200px">
+			<div class="container ">
+				<div>
+					<h3>第三步：选择字体仓库并上传模板表</h3>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-6">
+						<form enctype="multipart/form-data" action="{% url 'myfont:createfont' %}" method="POST"
+							class="my-login-validation" novalidate="">
+							{% csrf_token %}
+							<input type="hidden" name="filetype" value="file">
+							<div class="form-group">
+								<div class="radio">
+									<label>
+										<input type="radio" name="index" id="optionsRadios1" value="1" checked>
+										1号字体库
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="index" id="optionsRadios2" value="2">
+										2号字体库
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="index" id="optionsRadios3" value="3">
+										3号字体库
+									</label>
+								</div>
+							</div>
+
+
+
+
+							<div class="form-group">
+								<label for="exampleInputFile"></label>
+								<input type="file" multiple="true" accept=".bmp,.png,.jpg,.jpeg" name="inputfiles"
+									id="exampleInputFile">
+							</div>
+							<button type="submit" class="btn btn-primary btn-lg btn-block">点击上传多个文件</button>
+						</form>
+
+						<hr>
+<!-- 
+						<form enctype="multipart/form-data" action="{% url 'myfont:createfont' %}" method="POST"
+							class="my-login-validation" novalidate="">
+							{% csrf_token %}
+							<input type="hidden" name="filetype" value="directory">
+							<div class="form-group">
+								<label for="exampleInputFile"></label>
+								<input type="file" multiple="true" webkitdirectory directory accept="*/*"
+									name="inputfiles" id="exampleInputFile">
+							</div>
+							<button type="submit" class="btn btn-primary btn-lg btn-block">点击上传文件夹</button>
+						</form> -->
+					</div> <!--col-md-6-->
+					<div class="col-md-6">
+						<p><strong>字体仓库说明：</strong></p>
+						
+						<p>1.每个用户拥有3个字体仓库可用使用，存放用户已经生成的字体。
+						<br>2.请选择一个字体仓库供本次上传使用，会覆盖原仓库已有字体包。</p>
+						
+						<p><strong>上传说明：</strong></p>
+						
+						<p>1.请上传字体模板表中的全部模板，并拍照上传图片。
+						<!-- <br>2.请选择一个字体仓库供本次上传使用，会覆盖原仓库已有字体。</p> -->
+							
+					</div>
+				</div> <!--endROW -->
+
+			</div>
+		</section>
+		<!-- end -->
+		<!-- Vendor JS Files -->
+		<script src="{% static 'myfont/assets/vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/php-email-form/validate.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/counterup/counterup.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/venobox/venobox.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/aos/aos.js' %}"></script>
+		<!-- Template Main JS File -->
+		<script src="{% static 'myfont/assets/js/main.js' %}"></script>
+	</body>
+
+</html>

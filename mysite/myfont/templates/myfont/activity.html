@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title>见字如面</title>
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<!-- Favicons -->
+		<link href="{% static 'myfont/assets/img/favicon.png' %}" rel="icon">
+		<link href="{% static 'myfont/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+		 rel="stylesheet">
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'myfont/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+		<!-- Template Main CSS File -->
+		<link href="{% static 'myfont/assets/css/style.css' %}" rel="stylesheet">
+		<!-- =======================================================
+  * Template Name: Bethany - v2.2.0
+  * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+	</head>
+
+	<body>
+		
+		
+		<!-- ======= Header ======= -->
+		<header id="header" class="fixed-top d-flex align-items-center">
+		  <div class="container">
+		    <div class="header-container d-flex align-items-center">
+		      <div class="logo mr-auto">
+		        <h1 class="text-light"><a href="{% url 'myfont:index' %}"><span><strong>见字如面</strong></span></a></h1>
+		      </div>
+		
+		      <nav class="nav-menu d-none d-lg-block">
+		        <ul>
+		          <li><a href="{% url 'myfont:index' %}"><strong>首页</strong></a></li>
+		          <li><a href="{% url 'myfont:myfont' %}"><strong>我的字体</strong></a></li>
+		          <li><a href="{% url 'myfont:createfont' %}"><strong>新建字体</strong></a></li>
+		          <li><a href="{% url 'myfont:activity' %}"><strong>实用界面</strong></a></li>
+		          <li class="drop-down">
+		            <a href="{% url 'myfont:userinfo' %}"><strong>用户名：{{ request.myfont_user.user_name }}</strong></a><ul>
+		              <li><a href="{% url 'myfont:logout' %}">退出登录</a></li>
+		            </ul>
+		          </li>
+		        </ul>
+		      </nav><!-- .nav-menu -->
+		    </div><!-- End Header Container -->
+		  </div>
+		</header><!-- End Header -->
+		<!-- STEP 1 -->
+		<section id="portfolio" margin-top="200px">
+			<div class="container ">
+				<br>
+				<br><br>
+				<div>
+					<h3>写一封书信</h3>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-lg-6  col-md-6">
+						{% if result_img_url %}
+							<img src="/static/myfont/{{ result_img_url }}" class="img-fluid" alt="">
+						{% else %}
+							<img src="{% static 'myfont/assets/img/shufa.jpg' %}" class="img-fluid" alt="">
+						{% endif %}
+					</div>
+					<div class="col-lg-6 col-md-6">
+						<p>在下方文字框中编辑文字，点击“生成书信”按钮，得到您的手写字。</p>
+						<form action="{% url 'myfont:activity' %}" method="POST" class="my-login-validation" novalidate="">
+							{% csrf_token %}
+							<div class="form-group">
+								<div class="radio">
+									<label>
+									  <input type="radio" name="index" id="optionsRadios1" value="1" checked>
+									  1号字体库
+									</label>
+								  </div>
+								  <div class="radio">
+									<label>
+									  <input type="radio" name="index" id="optionsRadios2" value="2">
+									  2号字体库
+									</label>
+								  </div>
+								  <div class="radio">
+									<label>
+									  <input type="radio" name="index" id="optionsRadios3" value="3">
+									  3号字体库
+									</label>
+								  </div>
+							</div>
+							<textarea  name="article" class="form-control" rows="20">{{data}}</textarea>
+							<br>
+							<button type="submit" class="btn btn-primary btn-lg btn-block">生产书信</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end -->
+		<!-- Vendor JS Files -->
+		<script src="{% static 'myfont/assets/vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/php-email-form/validate.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/counterup/counterup.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/venobox/venobox.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/aos/aos.js' %}"></script>
+		<!-- Template Main JS File -->
+		<script src="{% static 'myfont/assets/js/main.js' %}"></script>
+	</body>
+
+</html>

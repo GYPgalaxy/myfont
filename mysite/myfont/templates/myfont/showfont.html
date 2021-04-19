@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<title>见字如面</title>
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<!-- Favicons -->
+		<link href="{% static 'myfont/assets/img/favicon.png' %}" rel="icon">
+		<link href="{% static 'myfont/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> 
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'myfont/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+		<link href="{% static 'myfont/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+		<!-- Template Main CSS File -->
+		<link href="{% static 'myfont/assets/css/style.css' %}" rel="stylesheet">
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- =======================================================
+		* Template Name: Bethany - v2.2.0
+		* Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+		* Author: BootstrapMade.com
+		* License: https://bootstrapmade.com/license/
+		======================================================== -->
+	</head>
+	<body>
+		<!-- ======= Header ======= -->
+		<header id="header" class="fixed-top d-flex align-items-center">
+		  <div class="container">
+		    <div class="header-container d-flex align-items-center">
+		      <div class="logo mr-auto">
+		        <h1 class="text-light"><a href="{% url 'myfont:index' %}"><span><strong>见字如面</strong></span></a></h1>
+		      </div>
+		      <nav class="nav-menu d-none d-lg-block">
+		        <ul>
+		          <li><a href="{% url 'myfont:index' %}"><strong>首页</strong></a></li>
+		          <li><a href="{% url 'myfont:myfont' %}"><strong>我的字体</strong></a></li>
+		          <li><a href="{% url 'myfont:createfont' %}"><strong>新建字体</strong></a></li>
+		          <li><a href="{% url 'myfont:activity' %}"><strong>实用界面</strong></a></li>
+		          <li class="drop-down">
+		            <a href="{% url 'myfont:userinfo' %}"><strong>用户名：{{ request.myfont_user.user_name }}</strong></a><ul>
+		              <li><a href="{% url 'myfont:logout' %}">退出登录</a></li>
+		            </ul>
+		          </li>
+		        </ul>
+		      </nav><!-- .nav-menu -->
+		    </div><!-- End Header Container -->
+		  </div>
+		</header><!-- End Header -->
+		<!-- ======= Hero Section ======= -->
+		<section id="hero" class="why-us">
+			<div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+				<div class="icon-boxes d-flex flex-column justify-content-center">
+					{% for row_path in img_paths %}
+					<div class="row" style="margin: 10px;">
+						{% for img_path in row_path %}
+						<div class="col-xl-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+							<div class="icon-box">
+								<img src="/static/myfont/{{ img_path }}" width="150px" height="150px"></img>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					{% endfor %}
+					
+					{% if data %}
+					<nav aria-label="Page navigation">
+					<ul id="pages" class="pagination pagination-large">
+						{% if data.first %}
+						<li><a href="?page=1">1</a></li>
+						{% endif %}
+						{% if data.left %}
+						{% if data.left_has_more %}
+						<li><span>...</span></li>
+						{% endif %}
+						{% for i in data.left %}
+						<li><a href="?page={{ i }}">{{ i }}</a></li>
+						{% endfor %}
+						{% endif %}
+						<li class="active"><a href="?page={{ data.page }}">{{ data.page }}</a></li>
+						{% if data.right %}
+						{% for i in data.right %}
+						<li><a href="?page={{ i }}">{{ i }}</a></li>
+						{% endfor %}
+						{% if data.right_has_more %}
+						<li><span>...</span></li>
+						{% endif %}
+						{% endif %}
+						{% if data.last %}
+						<li><a href="?page={{ data.total_pages }}">{{ data.total_pages }}</a></li>
+						{% endif %}
+					</ul>
+					</nav>
+					{% endif %}
+					
+				</div>
+			</div>
+		</section><!-- End Hero -->
+		<!-- end -->
+		<!-- Vendor JS Files -->
+		<script src="{% static 'myfont/assets/vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/php-email-form/validate.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/counterup/counterup.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/venobox/venobox.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'myfont/assets/vendor/aos/aos.js' %}"></script>
+		<!-- Template Main JS File -->
+		<script src="{% static 'myfont/assets/js/main.js' %}"></script>
+	</body>
+
+</html>
